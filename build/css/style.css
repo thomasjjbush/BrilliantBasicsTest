@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 12px;
+  /*navigation styles*/
+  /*deck styles*/ }
+  body nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 6px 33px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 6px 33px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px; }
+    body nav a {
+      width: 150px;
+      height: 30px;
+      cursor: pointer;
+      background-color: #2fc3ea;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      margin: 15px 0px; }
+      body nav a:hover {
+        background-color: #113e65; }
+  body section {
+    padding: 20px 0px; }
+    body section h1 {
+      display: block;
+      margin: 15px auto;
+      max-width: calc(73px * 13); }
+    body section .block {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      width: 100%;
+      max-width: calc(73px * 13);
+      margin: auto;
+      -webkit-perspective: 600;
+              perspective: 600; }
+      body section .block .card {
+        width: 73px;
+        height: 98px;
+        position: relative;
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        /*back of card*/ }
+        body section .block .card:before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          background: url(../img/cards.png) no-repeat;
+          background-position: inherit; }
+        body section .block .card:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          -webkit-transform: rotateY(180deg);
+                  transform: rotateY(180deg);
+          background: url(../img/back.jpg) no-repeat;
+          background-size: 100% 100%; }
+        body section .block .card.flipped {
+          -webkit-transform: rotateY(180deg);
+                  transform: rotateY(180deg); }
+    body section:nth-of-type(2) {
+      background-color: #f1f1f1; }
