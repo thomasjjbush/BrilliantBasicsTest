@@ -12,10 +12,16 @@
 <body>
 
    <nav>
+      <a onclick="shuffle(deck)">Shuffle the deck</a>
    	<a onclick="flipTheDeck()">Flip the deck</a>
-   	<a onclick="shuffle(deck)">Shuffle the deck</a>
-   	<a onclick="unShuffle()">Reset the deck</a>
-   	<a onclick="dealACard()">Deal 5 cards</a>
+      <a onclick="stackTheDeck()">Pile/Unpile the deck</a>
+      <a>
+         <div>
+            <input id="dealValue" type="number" min="1" value="5" max="52" oninput="limitValue()">
+         </div>
+         <span onclick="dealACard(document.getElementById('dealValue').value)">GO</span>
+      </a>
+      <a onclick="unShuffle()">Reset the deck</a>
    </nav>
 
    <section>

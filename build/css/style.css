@@ -12,24 +12,55 @@ body {
         justify-content: space-around;
     background-color: #fff;
     -webkit-box-shadow: 0px 6px 33px 2px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 6px 33px 2px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px; }
+            box-shadow: 0px 6px 33px 2px rgba(0, 0, 0, 0.5); }
     body nav a {
       width: 150px;
       height: 30px;
-      cursor: pointer;
       background-color: #2fc3ea;
       text-align: center;
       line-height: 30px;
       color: #fff;
-      margin: 15px 0px; }
+      margin: 15px 0px;
+      position: relative;
+      cursor: pointer;
+      /*input*/
+      /*hovers*/
+      /*disable click*/ }
+      body nav a div {
+        position: absolute;
+        left: 5px; }
+        body nav a div:before {
+          content: "Deal"; }
+        body nav a div input {
+          border: 0;
+          outline: none;
+          width: 26px; }
+        body nav a div:after {
+          content: "cards"; }
+      body nav a span {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        margin: auto;
+        width: 23px;
+        height: 23px;
+        line-height: 23px;
+        border-radius: 23px;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: #113e65; }
       body nav a:hover {
         background-color: #113e65; }
+        body nav a:hover span {
+          background-color: #2fc3ea; }
+      body nav a.disabled {
+        cursor: not-allowed; }
   body section {
     padding: 20px 0px; }
     body section h1 {
       display: block;
-      margin: 15px auto;
+      margin: 0 auto 15px auto;
       max-width: calc(73px * 13); }
     body section .block {
       display: -webkit-box;
@@ -41,40 +72,47 @@ body {
       max-width: calc(73px * 13);
       margin: auto;
       -webkit-perspective: 600;
-              perspective: 600; }
+              perspective: 600;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      /*flip/stack*/ }
       body section .block .card {
         width: 73px;
         height: 98px;
         position: relative;
         -webkit-transform-style: preserve-3d;
                 transform-style: preserve-3d;
-        -webkit-transition: all .5s ease-in-out;
-        transition: all .5s ease-in-out;
-        /*back of card*/ }
-        body section .block .card:before {
+        -webkit-transition: all .75s ease-in-out;
+        transition: all .75s ease-in-out; }
+        body section .block .card:before, body section .block .card:after {
           content: "";
           display: block;
           position: absolute;
           width: 100%;
           height: 100%;
           -webkit-backface-visibility: hidden;
-                  backface-visibility: hidden;
+                  backface-visibility: hidden; }
+        body section .block .card:before {
           background: url(../img/cards.png) no-repeat;
           background-position: inherit; }
         body section .block .card:after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          -webkit-backface-visibility: hidden;
-                  backface-visibility: hidden;
           -webkit-transform: rotateY(180deg);
                   transform: rotateY(180deg);
           background: url(../img/back.jpg) no-repeat;
           background-size: 100% 100%; }
-        body section .block .card.flipped {
+        body section .block .card:hover {
           -webkit-transform: rotateY(180deg);
                   transform: rotateY(180deg); }
+      body section .block#deck {
+        /*stack*/ }
+        body section .block#deck.stacked .card {
+          margin-left: -73px; }
+        body section .block#deck.flipped .card {
+          -webkit-transform: rotateY(180deg);
+                  transform: rotateY(180deg); }
+          body section .block#deck.flipped .card:hover {
+            -webkit-transform: rotateY(0deg);
+                    transform: rotateY(0deg); }
     body section:nth-of-type(2) {
       background-color: #f1f1f1; }
